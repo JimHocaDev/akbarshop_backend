@@ -21,7 +21,7 @@ exports.blogPost = async (req, res) => {
 
 exports.blogGet = async (req, res) => {
   try {
-    const blogs = await Blogs.find().populate("likes comments views");
+    const blogs = await Blogs.find()
     res.status(200).json({ data: blogs });
   } catch (error) {
     
@@ -32,7 +32,7 @@ exports.blogGet = async (req, res) => {
 exports.blogGetOne = async (req, res) => {
   try {
     const { id } = req.params;
-    const blog = await Blogs.findById(id).populate("likes comments views");
+    const blog = await Blogs.findById(id)
 
     res.status(200).json({ data: blog });
   } catch (error) {
