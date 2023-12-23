@@ -30,7 +30,7 @@ exports.blogGet = async (req, res) => {
 exports.blogLast = async (req, res) => {
   try {
     const blogs = await Blogs.find();
-    const data = blogs.reverse().splice(0, 10) || blogs;
+    const data = blogs.reverse().splice(0, 10) || blogs.reverse();
     res.status(200).json({ data: data });
   } catch (error) {
     res.status(500).json({ error: error.message });
