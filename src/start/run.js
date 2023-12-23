@@ -1,15 +1,14 @@
 const { connect } = require("mongoose");
-const config = require("config");
 const Admins = require("../models/Admin");
 
 const run = async (app) => {
-  const MONGO_URI = config.get("MONGO_URI");
+  const MONGO_URI = process.env.MONGO_URI;
 
   await connect(MONGO_URI);
 
   const admin = await Admins.findOne();
-  const username = config.get("admin_username");
-  const password = config.get("admin_password");
+  const username = process.env.admin_username;
+  const password = process.env.admin_password;
 
   if (!admin)
     Admins.create({
@@ -17,7 +16,7 @@ const run = async (app) => {
       password: password,
     });
 
-  const PORT = config.get("PORT");
+  const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(PORT);
   });

@@ -1,7 +1,0 @@
-{
-  "PORT": 4000,
-  "MONGO_URI": "mongodb+srv://ziyodilladev:ziyodilla123@cluster0.t9s2ir2.mongodb.net/akbarshop",
-  "SECRET_KEY": "this1Is2Secret3Key4",
-  "admin_username": "admin",
-  "admin_password": "$2a$10$4GFd8yGZjTjwiazICt3Us.UyvZwKEn9cyoN63ZJSkShYMMzGjxhr6"
-}
